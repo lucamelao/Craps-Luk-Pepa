@@ -39,8 +39,27 @@ while APOSTA == 'PLB' and fichas > 0:
         fichas = fichas - VALOR_APOSTA        
 else: 
     APOSTA == 'F' or 'AC' or 'T'
-    if APOSTA == 'F' and fichas > 0:        
+    if APOSTA == 'F' and fichas > 0: 
+        print('Você está na fase: Come out')
+        if SOMA1 == 5 or 6 or 7 or 8:
+            print('Que pena, você perdeu!')
+            fichas == fichas - VALOR_APOSTA
+        elif SOMA1 == 2 or 3 or 4 or 9 or 10 or 11 or 12:
+            print('Parabéns, você ganhou!')
+            if SOMA1 == 2:
+                fichas == fichas + (VALOR_APOSTA)*2
+            elif SOMA1 == 12:
+                fichas == fichas + (VALOR_APOSTA)*3
+            else:
+                fichas == fichas + VALOR_APOSTA
+    if APOSTA == 'AC' and fichas > 0:
+        print('Você está na fase: Come out')
+    if SOMA1 == 2 or 3 or 12:
+        print('Parabéns, você ganhou!')
+        fichas == fichas + (VALOR_APOSTA)*7
+    else:
+        print('Que pena, você perdeu!')
+        fichas == fichas - VALOR_APOSTA
+        
+        if APOSTA == 'T' and fichas > 0: 
 
-    if APOSTA == 'AC' and fichas > 0:        
-
-    if APOSTA == 'T' and fichas > 0:  
