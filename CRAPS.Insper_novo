@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+nome = input("Como você se chama? ")
+print("Hello {0}!".format(nome))
+print("Tenha um bom dia!")
+=======
 #importando as bibliotecas necessárias
 import random
 #definindo as variáveis que serão utilizadas
@@ -63,4 +68,5 @@ else:
         
         if APOSTA == 'T' and fichas > 0: 
 
+>>>>>>> 3dc4a2b73f125ee3a8374a77ea6a395991c784bd
 
