@@ -3,20 +3,15 @@ import random
 #definindo as variáveis que serão utilizadas
 DADO1 = random.randint(1,6)
 DADO2 = random.randint(1,6)
-SOMA1 = DADO1 + DADO2 == POINT
+SOMA1 == DADO1 + DADO2 == POINT
 SOMA2 == random.randint(1,6) + random.randint(1,6)
 fichas = 100
-PLB == Pass_Line_Bet
-F == Field
-AC == Any_Craps
-T == Twelve
-
- 
-
+'PLB' == 'Pass_Line_Bet'
+'F' == 'Field'
+'AC' == 'Any_Craps'
+'T' == 'Twelve'
 
 #SEMPRE PRINTAR QUAL FASE E QUAIS APOSTAS PODE FAZER
-
- 
 
 #início do jogo
 #fase "Come out"
@@ -26,7 +21,7 @@ while APOSTA == 'PLB' and fichas > 0:
     VALOR_APOSTA = int(input('Qual o valor da aposta: '))
     if SOMA1 == 7 or 11:
         print('Parabéns, você ganhou!')
-        fichas = fichas + VALOR_APOSTA
+        fichas == fichas + VALOR_APOSTA
     elif SOMA1 == 2 or 3 or 12:
         print('Que pena, você perdeu!')
         fichas = fichas - VALOR_APOSTA
@@ -40,25 +35,30 @@ while APOSTA == 'PLB' and fichas > 0:
             fichas = fichas + VALOR_APOSTA
         elif SOMA2 == 7:
             print('Que pena, você perdeu!')
-        fichas = fichas - VALOR_APOSTA                      
+            fichas = fichas - VALOR_APOSTA                      
 else:  
     APOSTA == 'F' or 'AC' or 'T'
     if APOSTA == 'F' and fichas > 0: 
         print('Você está na fase: Come out')
-        if SOMA1 == 5 or 6 or 7 or 8:
+        VALOR_APOSTA = int(input('Qual o valor da aposta: '))      
+        SOMA2 == random.randint(1,6) + random.randint(1,6)
+        if SOMA2 == 5 or 6 or 7 or 8:
             print('Que pena, você perdeu!')
             fichas == fichas - VALOR_APOSTA
-        elif SOMA1 == 2 or 3 or 4 or 9 or 10 or 11 or 12:
+        elif SOMA2 == 2 or 3 or 4 or 9 or 10 or 11 or 12:
             print('Parabéns, você ganhou!')
-            if SOMA1 == 2:
+            if SOMA2 == 2:
                 fichas == fichas + (VALOR_APOSTA)*2
-            elif SOMA1 == 12:
+            elif SOMA2 == 12:
                 fichas == fichas + (VALOR_APOSTA)*3
             else:
                 fichas == fichas + VALOR_APOSTA
+    
     elif APOSTA == 'AC' and fichas > 0:
         print('Você está na fase: Come out')
-        if SOMA1 == 2 or 3 or 12:
+        VALOR_APOSTA = int(input('Qual o valor da aposta: '))        
+        SOMA2 == random.randint(1,6) + random.randint(1,6)
+        if SOMA2 == 2 or 3 or 12:
             print('Parabéns, você ganhou!')
             fichas == fichas + (VALOR_APOSTA)*7
         else:
@@ -68,8 +68,24 @@ else:
     else:
         APOSTA == 'T' 
         if fichas > 0:
-            if SOMA1 == 12:
+            VALOR_APOSTA = int(input('Qual o valor da aposta: '))
+            SOMA2 == random.randint(1,6) + random.randint(1,6)
+            if SOMA2 == 12:
+                print('Parabéns, você ganhou!')
                 fichas == fichas + (VALOR_APOSTA)*30
             else:
+                print('Que pena, você perdeu!')
                 fichas == fichas - VALOR_APOSTA
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
