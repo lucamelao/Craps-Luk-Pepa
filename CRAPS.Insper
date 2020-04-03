@@ -7,12 +7,17 @@ DADO2 = random.randint(1,6)
 SOMA1 = DADO1 + DADO2
 SOMA2 = random.randint(1,6) + random.randint(1,6)
 fichas = 100
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> 386cf40b90896e20fec49e892b74f1c87eeedd69
 #Definição dos tipos de apostas
 #'PLB' = Pass Line Bet
 #'F' = Field
 #'AC' = Any_Craps
 #'T' = Twelve
+<<<<<<< HEAD
    
 #início do jogo
 while fichas > 0:
@@ -32,10 +37,63 @@ while fichas > 0:
                 APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
             elif SOMA1 == 2 or 3 or 12:
                 ('A soma dos dados deu {0}'.format(SOMA1))
+=======
+
+#início do jogo
+while fichas > 0 and VALOR_APOSTA <= fichas:
+
+    #fase "Come out"
+    print('Você está na fase: Come out')
+    APOSTA = input('Qual a opção de aposta escolhida? (PLB/F/AC/T)')
+
+    while APOSTA == 'PLB' and fichas > 0:
+        VALOR_APOSTA = int(input('Qual o valor da aposta: '))
+        SOMA1 = DADO1 + DADO2
+        if SOMA1 == 7 or 11:
+            ('A soma dos dados deu {0}'.format(SOMA1))
+            print('Parabéns, você ganhou!')
+            fichas = fichas + VALOR_APOSTA
+            print ('Agora você possui {0} fichas!'.format(fichas))
+            APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+        elif SOMA1 == 2 or 3 or 12:
+            ('A soma dos dados deu {0}'.format(SOMA1))
+            print('Que pena, você perdeu!')
+            fichas = fichas - VALOR_APOSTA
+            print ('Agora você possui {0} fichas!'.format(fichas))
+            APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+        
+        #fase "Point"
+        else:
+            print('Agora vamos mudar de fase')
+            print('Você está na fase: Point')
+            APOSTA = input('Qual a opção de aposta escolhida? (F/AC/T)')
+            SOMA2 = random.randint(1,6) + random.randint(1,6)
+            while SOMA2 != SOMA1 or SOMA2 != 7:
+                SOMA2 = random.randint(1,6) + random.randint(1,6)
+                if SOMA2 == SOMA1:
+                    print ('A soma dos dados foi igual ao valor do point.')
+                    print('Parabéns, você ganhou!')
+                    fichas = fichas + VALOR_APOSTA
+                    print ('Agora você possui {0} fichas!'.format(fichas))
+                elif SOMA2 == 7:
+                    print('A soma dos dados deu {0}'.format(SOMA2))
+                    print('Que pena, você perdeu!')
+                    fichas = fichas - VALOR_APOSTA
+                    print ('Agora você possui {0} fichas!'.format(fichas))
+                    APOSTA = input('Qual aposta você deseja realizar agora? (F/AC/T)')
+    else:  
+        APOSTA == 'F' or 'AC' or 'T'
+        if APOSTA == 'F' and fichas > 0: 
+            print('Você está na fase: Come out')
+            VALOR_APOSTA = int(input('Qual o valor da aposta: '))      
+            if SOMA1 == 5 or 6 or 7 or 8:
+                print('A soma dos dados deu {0}'.format(SOMA1))
+>>>>>>> 386cf40b90896e20fec49e892b74f1c87eeedd69
                 print('Que pena, você perdeu!')
                 fichas = fichas - VALOR_APOSTA
                 print ('Agora você possui {0} fichas!'.format(fichas))
                 APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+<<<<<<< HEAD
            
             #fase "Point"
             else:
@@ -115,3 +173,53 @@ while fichas > 0:
                         fichas = fichas - VALOR_APOSTA
                         print ('Agora você possui {0} fichas!'.format(fichas))
                         APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+=======
+            elif SOMA1 == 2 or 3 or 4 or 9 or 10 or 11 or 12:
+                if SOMA1 == 2:
+                    print('Parabéns, você ganhou!')
+                    print('A soma dos dados deu {0}'.format(SOMA2))
+                    fichas = fichas + (VALOR_APOSTA)*2
+                    print ('Agora você possui {0} fichas!'.format(fichas))
+                    APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+                elif SOMA1 == 12:
+                    print('Parabéns, você ganhou!')
+                    print('A soma dos dados deu {0}'.format(SOMA1))
+                    fichas = fichas + (VALOR_APOSTA)*3
+                    print ('Agora você possui {0} fichas!'.format(fichas))
+                    APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+            else:
+                print('Parabéns, você ganhou!')
+                print('A soma dos dados deu {0}'.format(SOMA1))
+                fichas = fichas + VALOR_APOSTA
+                print ('Agora você possui {0} fichas!'.format(fichas))
+                APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+    
+        elif APOSTA == 'AC' and fichas > 0:
+            print('Você está na fase: Come out')
+            VALOR_APOSTA = int(input('Qual o valor da aposta: '))        
+            if SOMA1 == 2 or 3 or 12:
+                print('Parabéns, você ganhou!')
+                fichas = fichas + (VALOR_APOSTA)*7
+                print('Agora você possui {0} fichas!'.format(fichas))
+                APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+            else:
+                print('Que pena, você perdeu!')
+                fichas = fichas - VALOR_APOSTA
+                print ('Agora você possui {0} fichas!'.format(fichas))
+                APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+        
+        else:
+            APOSTA == 'T' 
+            if fichas > 0:
+                VALOR_APOSTA = int(input('Qual o valor da aposta: '))
+                if SOMA1 == 12:
+                    print('Parabéns, você ganhou!')
+                    fichas = fichas + (VALOR_APOSTA)*30
+                    print ('Agora você possui {0} fichas!'.format(fichas))
+                    APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+                else:
+                    print('Que pena, você perdeu!')
+                    fichas = fichas - VALOR_APOSTA
+                    print ('Agora você possui {0} fichas!'.format(fichas))
+                    APOSTA = input('Qual aposta você deseja realizar agora? (PLB/F/AC/T)')
+>>>>>>> 386cf40b90896e20fec49e892b74f1c87eeedd69
