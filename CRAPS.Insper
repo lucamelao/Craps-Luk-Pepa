@@ -61,7 +61,6 @@ while fichas > 0:
                     print('Estamos saindo da fase Point')
                     APOSTA = input('Qual aposta você deseja realizar agora? (F/AC/T)')
 
-            #APOSTA = input('Qual a opção de aposta escolhida? (F/AC/T)')
     elif APOSTA == 'F': 
         print('Você está na fase: Come out')
         VALOR_APOSTA = int(input('Qual o valor da aposta: '))      
